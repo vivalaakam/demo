@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: "postgres:9.6"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: hello_pass
+      POSTGRES_USER: hello_user
+      POSTGRES_DB: hello
+  web:
+    image: "vivalaakam/hello:0.1.5"
+    command: foreground
+    depends_on:
+      - db
+    ports:
+      - "4000:4000"
+    environment:
+      DATABASE_URL: "postgres://hello_user:hello_pass@db:5432/hello"
+      PORT: 4000
+      POOL_SIZE: 10
