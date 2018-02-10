@@ -5,11 +5,14 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_DB: demo_prod
+      POSTGRES_PASSWORD: hello_pass
+      POSTGRES_USER: hello_user
+      POSTGRES_DB: hello
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
   web:
-    image: "vivalaakam/hello:0.1.5"
+    image: "vivalaakam/hello:0.1.11"
+    command: foreground
     depends_on:
       - db
     ports:

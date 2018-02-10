@@ -27,12 +27,15 @@ config :logger,
 
 config :demo, Demo.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "demo_prod",
+  username: "hello_user",
+  password: "hello_pass",
+  database: "hello",
   hostname: "db",
   port: "5432",
   pool_size: 10
+
+config :demo, Demo.Repo,
+  secret_key_base: "KhWgDAoIZajZTEtCYGepswrBAgi/N82DdDZqfwRR00NYxSZW1J1ahiSUl92AM/OE"
 
 # ## SSL Support
 #
