@@ -43,7 +43,7 @@ defmodule Demo.Mixfile do
       {:phoenix_ecto, "~> 3.3"},
       {:postgrex, "~> 0.13"},
       {:gettext, "~> 0.14"},
-      {:cowboy, "~> 2.2", override: true},
+      {:cowboy, "~> 1.0"},
       {:distillery, "~> 1.5"}
     ]
   end
