@@ -15,5 +15,5 @@ done
 set =e
 
 echo "Running migrations"
-bin/demo rpc Demo.Release.Tasks migrate
+bin/demo rpc Elixir.Demo.Release.Tasks migrate
 echo "Migrations run successfully"
